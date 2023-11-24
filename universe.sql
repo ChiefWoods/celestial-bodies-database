@@ -284,6 +284,26 @@ INSERT INTO public.galaxy VALUES (6, 'Large Magellanic Cloud', 'Dorado', 49.970,
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 1, 'Luna', 1737, NULL, true);
+INSERT INTO public.moon VALUES (2, 3, 'Phobos', 11, 1877, true);
+INSERT INTO public.moon VALUES (3, 3, 'Deimos', 6, 1877, true);
+INSERT INTO public.moon VALUES (4, 5, 'Io', 1821, NULL, true);
+INSERT INTO public.moon VALUES (5, 5, 'Europa', 1560, 1610, true);
+INSERT INTO public.moon VALUES (6, 5, 'Ganymede', 2634, 1610, true);
+INSERT INTO public.moon VALUES (7, 5, 'Callisto', 2410, 1610, true);
+INSERT INTO public.moon VALUES (8, 7, 'Titan', 2575, 1655, true);
+INSERT INTO public.moon VALUES (9, 8, 'Miranda', 235, 1948, true);
+INSERT INTO public.moon VALUES (10, 8, 'Ariel', 578, 1851, true);
+INSERT INTO public.moon VALUES (11, 8, 'Umbriel', 584, 1851, true);
+INSERT INTO public.moon VALUES (12, 8, 'Titania', 788, 1787, true);
+INSERT INTO public.moon VALUES (13, 9, 'Triton', 1353, 1846, true);
+INSERT INTO public.moon VALUES (14, 9, 'Nereid', 170, 1949, true);
+INSERT INTO public.moon VALUES (15, 10, 'Proteus', 210, 1989, true);
+INSERT INTO public.moon VALUES (16, 11, 'Mimas', 198, 1789, true);
+INSERT INTO public.moon VALUES (17, 11, 'Encelauds', 252, 1789, true);
+INSERT INTO public.moon VALUES (18, 11, 'Tethys', 531, 1684, true);
+INSERT INTO public.moon VALUES (19, 11, 'Dione', 561, 1684, true);
+INSERT INTO public.moon VALUES (20, 11, 'Rhea', 764, 1672, true);
 
 
 --
@@ -308,6 +328,9 @@ INSERT INTO public.planet VALUES (12, 5, 'TRAPPIST-1e', 40110000, 'Rocky', true)
 -- Data for Name: probe; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.probe VALUES (1, 1, NULL, 'Pioneer 10', 'Flyby', true);
+INSERT INTO public.probe VALUES (2, 5, NULL, 'Voyager 1', 'Flyby', true);
+INSERT INTO public.probe VALUES (3, 9, NULL, 'New Horizons', 'Flyby', true);
 
 
 --
@@ -333,7 +356,7 @@ SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 -- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_moon_id_seq', 20, true);
 
 
 --
@@ -347,7 +370,7 @@ SELECT pg_catalog.setval('public.planet_planet_id_seq', 12, true);
 -- Name: probe_probe_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.probe_probe_id_seq', 1, false);
+SELECT pg_catalog.setval('public.probe_probe_id_seq', 3, true);
 
 
 --
