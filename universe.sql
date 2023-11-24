@@ -127,7 +127,7 @@ CREATE TABLE public.planet (
     planet_id integer NOT NULL,
     star_id integer,
     name character varying(64) NOT NULL,
-    distance_from_earth_km integer NOT NULL,
+    distance_from_earth_km bigint NOT NULL,
     planet_type character varying(32),
     has_life boolean
 );
@@ -272,6 +272,12 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy VALUES (1, 'Andromeda Galaxy', 'Andromeda', 2.537, 'Spiral', 'The closest spiral galaxy to the Milky Way.');
+INSERT INTO public.galaxy VALUES (2, 'Triangulum Galaxy', 'Triangulum', 3.073, 'Spiral', 'A member of the Local Group, located near Andromeda and the Milky Way.');
+INSERT INTO public.galaxy VALUES (3, 'Whirlpool Galaxy', 'Canes Venatici', 31.000, 'Spiral', 'Known for its classic spiral structure and interaction with a smaller galaxy.');
+INSERT INTO public.galaxy VALUES (4, 'Sombrero Galaxy', 'Virgo', 9.550, 'Spiral', 'Easily recognizable due to its bright nucleus and large central bulge.');
+INSERT INTO public.galaxy VALUES (5, 'Messier 87', 'Virgo', 53.490, 'Elliptical', 'Home to the first image of a black hole, captured by the Event Horizon Telescope.');
+INSERT INTO public.galaxy VALUES (6, 'Large Magellanic Cloud', 'Dorado', 49.970, 'Irregular', 'A satellite galaxy of the Milky Way, known for its irregular shape and active star formation.');
 
 
 --
@@ -284,6 +290,18 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, 1, 'Mercury', 91700000, 'Rocky', false);
+INSERT INTO public.planet VALUES (2, 1, 'Venus', 41400000, 'Rocky', false);
+INSERT INTO public.planet VALUES (3, 1, 'Earth', 0, 'Rocky', true);
+INSERT INTO public.planet VALUES (4, 1, 'Mars', 7800000, 'Rocky', false);
+INSERT INTO public.planet VALUES (5, 2, 'Jupiter', 628730000, 'Gas Giant', false);
+INSERT INTO public.planet VALUES (6, 2, 'Saturn', 1275000000, 'Gas Giant', false);
+INSERT INTO public.planet VALUES (7, 2, 'Uranus', 2723000000, 'Ice Giant', false);
+INSERT INTO public.planet VALUES (8, 3, 'Neptune', 4351000000, 'Ice Giant', false);
+INSERT INTO public.planet VALUES (9, 4, 'Pluto', 5910000000, 'Dwarf Planet', false);
+INSERT INTO public.planet VALUES (10, 5, 'Kepler-186f', 49370000, 'Rocky', true);
+INSERT INTO public.planet VALUES (11, 5, 'Gliese 581g', 20000000, 'Rocky', true);
+INSERT INTO public.planet VALUES (12, 5, 'TRAPPIST-1e', 40110000, 'Rocky', true);
 
 
 --
@@ -296,13 +314,19 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 1, 'Alpha Centauri A', 4.37, 'G2V', 6000);
+INSERT INTO public.star VALUES (2, 1, 'Alpha Centauri B', 4.37, 'K1V', 5000);
+INSERT INTO public.star VALUES (3, 2, 'Proxima Centauri', 4.24, 'M5.5V', 12000);
+INSERT INTO public.star VALUES (4, 3, 'Betelgeuse', 427.00, 'M1-2Ia', 100000);
+INSERT INTO public.star VALUES (5, 4, 'Sirius', 8.60, 'A1Vm', 200);
+INSERT INTO public.star VALUES (6, 5, 'Vega', 25.04, 'AOV', 450);
 
 
 --
 -- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 1, false);
+SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 
 
 --
@@ -316,7 +340,7 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 12, true);
 
 
 --
@@ -330,7 +354,7 @@ SELECT pg_catalog.setval('public.probe_probe_id_seq', 1, false);
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
+SELECT pg_catalog.setval('public.star_star_id_seq', 6, true);
 
 
 --
